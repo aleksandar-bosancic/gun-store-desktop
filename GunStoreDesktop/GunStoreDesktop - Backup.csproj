@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
+        <OutputType>WinExe</OutputType>
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
@@ -24,33 +24,18 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Resources\Localization\Strings">
+      <EmbeddedResource Update="Resources\Localization\Strings-EN.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Strings-ENG.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\Localization\Strings.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+        <LastGenOutput>Strings-EN.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Resources\Localization\Strings.Designer.cs">
+      <Compile Update="Resources\Localization\Strings-EN.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>Strings.resx</DependentUpon>
+        <DependentUpon>Strings-EN.resx</DependentUpon>
       </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Resources\Images" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Resources\Images\language_icon.png" />
-      <Resource Include="Resources\Images\language_icon.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Resource>
     </ItemGroup>
 
 </Project>
