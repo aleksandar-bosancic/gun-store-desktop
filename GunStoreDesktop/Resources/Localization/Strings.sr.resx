@@ -29,4 +29,10 @@
     <data name="EspLanguageText" xml:space="preserve">
         <value>Španski</value>
     </data>
+    <data name="FailedLoginText" xml:space="preserve">
+        <value>Nevažeči kredencijali za prijavu.</value>
+    </data>
+    <data name="FailedLoginCaption" xml:space="preserve">
+        <value>Prijava neuspješna</value>
+    </data>
 </root>

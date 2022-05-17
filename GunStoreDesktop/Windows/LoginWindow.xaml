@@ -5,12 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:util="clr-namespace:GunStoreDesktop.Util"
         xmlns:controls="clr-namespace:GunStoreDesktop.Controls"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="LoginWindow" Height="350" Width="600"
         MinHeight="300" MinWidth="400"
         Style="{DynamicResource MaterialDesignWindow}">
-    <Grid ShowGridLines="True">
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="6*"/>

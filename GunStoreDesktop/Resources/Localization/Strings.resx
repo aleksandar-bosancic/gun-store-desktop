@@ -36,4 +36,10 @@
     <data name="EspLanguageText" xml:space="preserve">
         <value>Spanish</value>
     </data>
+    <data name="FailedLoginText" xml:space="preserve">
+        <value>Invalid login credentials.</value>
+    </data>
+    <data name="FailedLoginCaption" xml:space="preserve">
+        <value>Login failed</value>
+    </data>
 </root>

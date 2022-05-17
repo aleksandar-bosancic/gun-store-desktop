@@ -29,4 +29,10 @@
     <data name="EspLanguageText" xml:space="preserve">
         <value>Español</value>
     </data>
+    <data name="FailedLoginText" xml:space="preserve">
+        <value>Credenciales de inicio de sesión no válidas.</value>
+    </data>
+    <data name="FailedLoginCaption" xml:space="preserve">
+        <value>Fallo al iniciar sesion</value>
+    </data>
 </root>

@@ -3,25 +3,108 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:views="clr-namespace:GunStoreDesktop.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" MinHeight="450" MinWidth="800"
+        WindowState="Maximized"
         Style="{DynamicResource MaterialDesignWindow}">
-    <GroupBox Header="Change theme">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Button Click="DarkButtonOnClick" Height="50" Margin="5" Content="Dark"/>
-            <Button Grid.Row="0" Click="LightButtonOnClick" Height="50" Margin="5"  Content="Light" Grid.Column="1"/>
-            <Button Grid.Row="1" Grid.Column="0" Height="50" Margin="5" Content="Blue" Click="GreenButtonOnClick"/>
-            <Button Grid.Column="1" Grid.Row="1" Height="50" Margin="5" Content="Yellow" Click="YellowButtonOnClick"></Button>
-        </Grid>
-    </GroupBox>
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ToggleStyle" TargetType="ToggleButton"
+                   BasedOn="{StaticResource MaterialDesignActionToggleButton}">
+                <Setter Property="Height" Value="50" />
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                <Setter Property="MinWidth" Value="50"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <materialDesign:ColorZone Mode="PrimaryMid">
+        <DockPanel>
+            <Grid DockPanel.Dock="Top" Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="22" Grid.Column="1"
+                       Margin="10">
+                    HCI Gun Store
+                </Label>
+                <Button Grid.Column="2" Height="30" Width="50" 
+                        HorizontalAlignment="Right"
+                        Margin="10"
+                        HorizontalContentAlignment="Center">
+                    <materialDesign:PackIcon Kind="Logout"></materialDesign:PackIcon>
+                </Button>
+            </Grid>
+            <TabControl VerticalContentAlignment="Top"
+                        Style="{StaticResource MaterialDesignNavigationRailTabControl}">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center"
+                                Kind="Folder" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Text="All Files" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <views:HomeView></views:HomeView>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center"
+                                Kind="ClockOutline" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Text="Recent" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <views:EmployeeView></views:EmployeeView>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center"
+                                Kind="Images" />
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                Text="Photos" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TextBlock>
+                        <Run
+                            Text="tab 3 content. Default look and behaviors." />
+                        <LineBreak />
+                        <LineBreak />
+                    </TextBlock>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
 
-
+    </materialDesign:ColorZone>
 </Window>

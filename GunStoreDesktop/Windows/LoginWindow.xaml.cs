@@ -4,6 +4,8 @@ using System.Windows;
 using System.Windows.Controls;
 using GunStoreDesktop.Data.DataAccess;
 using GunStoreDesktop.Data.Model;
+using GunStoreDesktop.Util;
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace GunStoreDesktop.Windows;
 
@@ -26,13 +28,18 @@ public partial class LoginWindow
             employee => employee.Username == Username && employee.Password == Password);
         if (employee != null)
         {
-            MainWindow mainWindow = new();
+            MainWindow mainWindow = new()
+            {
+                CurrentEmployee = employee
+            };
             mainWindow.Show();
             Close();
         }
         else
         {
-            MessageBox.Show("Invalid credentials");
+            MessageBox.Show(this, $"{TranslationSource.Instance["FailedLoginText"]}", 
+                $"{TranslationSource.Instance["FailedLoginCaption"]}", 
+                MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 
@@ -43,6 +50,4 @@ public partial class LoginWindow
             Password = (sender as PasswordBox)?.Password;
         }
     }
-
-    
 }

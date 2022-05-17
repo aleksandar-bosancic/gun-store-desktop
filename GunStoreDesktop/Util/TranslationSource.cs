@@ -1,24 +1,20 @@
 ﻿using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
-using System.Runtime.CompilerServices;
-using GunStoreDesktop.Properties;
 
 namespace GunStoreDesktop.Util;
 
 public class TranslationSource : INotifyPropertyChanged
 {
+    public event PropertyChangedEventHandler? PropertyChanged;
     public static TranslationSource Instance { get; } = new();
 
     private readonly ResourceManager _resourceManager = Resources.Localization.Strings.ResourceManager;
-    private CultureInfo _cultureInfo = null;
+    private CultureInfo? _cultureInfo;
 
-    public string? this[string key]
-    {
-        get { return this._resourceManager.GetString(key, this._cultureInfo); }
-    }
+    public string? this[string key] => _resourceManager.GetString(key, _cultureInfo);
 
-    public CultureInfo CultureInfo
+    public CultureInfo? CultureInfo
     {
         get => _cultureInfo;
         set
@@ -29,6 +25,4 @@ public class TranslationSource : INotifyPropertyChanged
             @event?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
         }
     }
-    
-    public event PropertyChangedEventHandler? PropertyChanged;
 }

@@ -1,6 +1,10 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Media;
+using GunStoreDesktop.Data.Model;
+using GunStoreDesktop.Util;
 using MaterialDesignThemes.Wpf;
 
 namespace GunStoreDesktop.Windows
@@ -10,7 +14,8 @@ namespace GunStoreDesktop.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool isDarkTheme;
+        public Employee? CurrentEmployee { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -48,6 +53,12 @@ namespace GunStoreDesktop.Windows
             theme.SetPrimaryColor(Colors.Chartreuse);
             theme.SetSecondaryColor(Colors.Blue);
             paletteHelper.SetTheme(theme);
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("AAAAAAAAAAAAA");
+            (sender as ToggleButton).IsChecked = true;
         }
     }
 }

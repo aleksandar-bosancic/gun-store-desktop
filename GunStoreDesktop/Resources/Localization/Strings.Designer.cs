@@ -79,6 +79,24 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login failed.
+        /// </summary>
+        internal static string FailedLoginCaption {
+            get {
+                return ResourceManager.GetString("FailedLoginCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid login credentials..
+        /// </summary>
+        internal static string FailedLoginText {
+            get {
+                return ResourceManager.GetString("FailedLoginText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string LoginButtonText {
