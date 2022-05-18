@@ -3,29 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:util="clr-namespace:GunStoreDesktop.Util"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:views="clr-namespace:GunStoreDesktop.Views"
         mc:Ignorable="d"
         Title="MainWindow" MinHeight="450" MinWidth="800"
         WindowState="Maximized"
         Style="{DynamicResource MaterialDesignWindow}">
-    <Window.Resources>
-        <ResourceDictionary>
-            <Style x:Key="ToggleStyle" TargetType="ToggleButton"
-                   BasedOn="{StaticResource MaterialDesignActionToggleButton}">
-                <Setter Property="Height" Value="50" />
-                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                <Setter Property="MinWidth" Value="50"></Setter>
-            </Style>
-        </ResourceDictionary>
-    </Window.Resources>
-    <materialDesign:ColorZone Mode="PrimaryMid">
+    <materialDesign:ColorZone Mode="PrimaryMid" VerticalAlignment="Stretch">
         <DockPanel>
-            <Grid DockPanel.Dock="Top" Height="50">
+            <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label HorizontalContentAlignment="Center"
                        VerticalContentAlignment="Center"
@@ -34,16 +25,16 @@
                        Margin="10">
                     HCI Gun Store
                 </Label>
-                <Button Grid.Column="2" Height="30" Width="50" 
+                <Button Grid.Column="2" Height="30" Width="50"
                         HorizontalAlignment="Right"
                         Margin="10"
                         HorizontalContentAlignment="Center">
                     <materialDesign:PackIcon Kind="Logout"></materialDesign:PackIcon>
                 </Button>
             </Grid>
-            <TabControl VerticalContentAlignment="Top"
-                        Style="{StaticResource MaterialDesignNavigationRailTabControl}">
-                <TabItem>
+
+            <TabControl Style="{StaticResource MaterialDesignNavigationRailTabControl}">
+                <TabItem Width="auto">
                     <TabItem.Header>
                         <StackPanel
                             Width="auto"
@@ -52,17 +43,17 @@
                                 Width="24"
                                 Height="24"
                                 HorizontalAlignment="Center"
-                                Kind="Folder" />
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                Text="All Files" />
+                                Kind="CashRegister" />
+                            <TextBlock Margin="2"
+                                       HorizontalAlignment="Center"
+                                       Text="{util:Localization SalesLabel}" />
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
-                        <views:HomeView></views:HomeView>
+                        <views:SalesView></views:SalesView>
                     </Grid>
                 </TabItem>
-                <TabItem>
+                <TabItem Width="auto">
                     <TabItem.Header>
                         <StackPanel
                             Width="auto"
@@ -71,40 +62,59 @@
                                 Width="24"
                                 Height="24"
                                 HorizontalAlignment="Center"
-                                Kind="ClockOutline" />
-                            <TextBlock
+                                Kind="ApplicationCogOutline" />
+                            <TextBlock Margin="2"
+                                       HorizontalAlignment="Center"
+                                       Text="{util:Localization SettingsLabel}" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <views:SettingsView></views:SettingsView>
+                    </Grid>
+                </TabItem>
+                <TabItem Width="auto"
+                         Visibility="{Binding isAdmin, 
+                         Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <TabItem.Header>
+                        <StackPanel
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
                                 HorizontalAlignment="Center"
-                                Text="Recent" />
+                                Kind="TruckOutline" />
+                            <TextBlock Margin="2"
+                                       HorizontalAlignment="Center"
+                                       Text="{util:Localization SuppliersLabel}" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <views:SupplyView></views:SupplyView>
+                    </Grid>
+                </TabItem>
+                <TabItem Width="auto"
+                         Visibility="{Binding isAdmin, 
+                         Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <TabItem.Header>
+                        <StackPanel
+                            Width="auto"
+                            Height="auto">
+                            <materialDesign:PackIcon
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center"
+                                Kind="AccountBoxMultipleOutline" />
+                            <TextBlock Margin="2"
+                                       HorizontalAlignment="Center"
+                                       Text="{util:Localization EmployeesLabel}" />
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
                         <views:EmployeeView></views:EmployeeView>
                     </Grid>
                 </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel
-                            Width="auto"
-                            Height="auto">
-                            <materialDesign:PackIcon
-                                Width="24"
-                                Height="24"
-                                HorizontalAlignment="Center"
-                                Kind="Images" />
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                Text="Photos" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TextBlock>
-                        <Run
-                            Text="tab 3 content. Default look and behaviors." />
-                        <LineBreak />
-                        <LineBreak />
-                    </TextBlock>
-                </TabItem>
             </TabControl>
         </DockPanel>
-
     </materialDesign:ColorZone>
 </Window>

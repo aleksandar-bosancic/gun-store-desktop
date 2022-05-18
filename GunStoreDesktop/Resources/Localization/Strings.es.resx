@@ -35,4 +35,16 @@
     <data name="FailedLoginCaption" xml:space="preserve">
         <value>Fallo al iniciar sesion</value>
     </data>
+    <data name="EmployeesLabel" xml:space="preserve">
+        <value>Empleados</value>
+    </data>
+    <data name="SalesLabel" xml:space="preserve">
+        <value>Ventas</value>
+    </data>
+    <data name="SettingsLabel" xml:space="preserve">
+        <value>Ajustes</value>
+    </data>
+    <data name="SuppliersLabel" xml:space="preserve">
+        <value>Proveedores</value>
+    </data>
 </root>

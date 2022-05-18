@@ -42,4 +42,16 @@
     <data name="FailedLoginCaption" xml:space="preserve">
         <value>Login failed</value>
     </data>
+    <data name="EmployeesLabel" xml:space="preserve">
+        <value>Employees</value>
+    </data>
+    <data name="SalesLabel" xml:space="preserve">
+        <value>Sales</value>
+    </data>
+    <data name="SettingsLabel" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+    <data name="SuppliersLabel" xml:space="preserve">
+        <value>Suppliers</value>
+    </data>
 </root>

@@ -35,4 +35,16 @@
     <data name="FailedLoginCaption" xml:space="preserve">
         <value>Prijava neuspješna</value>
     </data>
+    <data name="EmployeesLabel" xml:space="preserve">
+        <value>Zaposleni</value>
+    </data>
+    <data name="SalesLabel" xml:space="preserve">
+        <value>Prodaja</value>
+    </data>
+    <data name="SettingsLabel" xml:space="preserve">
+        <value>Podešavanja</value>
+    </data>
+    <data name="SuppliersLabel" xml:space="preserve">
+        <value>Dobavljači</value>
+    </data>
 </root>

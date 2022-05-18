@@ -14,11 +14,23 @@ namespace GunStoreDesktop.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Employee? CurrentEmployee { get; set; }
-
+        public Employee CurrentEmployee { get; set; }
+        public bool isAdmin { get; set; }
+        public string text { get; set; }
+        
         public MainWindow()
         {
+            CurrentEmployee = new Employee()
+            {
+                Id = 1,
+                IsAdmin = true,
+                Password = "admin",
+                Username = "admin"
+            };
             InitializeComponent();
+            isAdmin = true;
+            text = "Neki tamo text ludi najludji";
+            DataContext = this;
         }
 
         private void DarkButtonOnClick(object sender, RoutedEventArgs e)
