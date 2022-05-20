@@ -61,6 +61,24 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Secondary.
+        /// </summary>
+        internal static string AccentLabel {
+            get {
+                return ResourceManager.GetString("AccentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        internal static string DarkLabel {
+            get {
+                return ResourceManager.GetString("DarkLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employees.
         /// </summary>
         internal static string EmployeesLabel {
@@ -106,6 +124,24 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string LanguageLabel {
+            get {
+                return ResourceManager.GetString("LanguageLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        internal static string LightLabel {
+            get {
+                return ResourceManager.GetString("LightLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string LoginButtonText {
@@ -124,11 +160,29 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Primary.
+        /// </summary>
+        internal static string PrimaryLabel {
+            get {
+                return ResourceManager.GetString("PrimaryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sales.
         /// </summary>
         internal static string SalesLabel {
             get {
                 return ResourceManager.GetString("SalesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Settings.
+        /// </summary>
+        internal static string SaveSettingsText {
+            get {
+                return ResourceManager.GetString("SaveSettingsText", resourceCulture);
             }
         }
         
@@ -156,6 +210,15 @@ namespace GunStoreDesktop.Resources.Localization {
         internal static string SuppliersLabel {
             get {
                 return ResourceManager.GetString("SuppliersLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme.
+        /// </summary>
+        internal static string ThemeLabel {
+            get {
+                return ResourceManager.GetString("ThemeLabel", resourceCulture);
             }
         }
         

@@ -47,4 +47,25 @@
     <data name="SuppliersLabel" xml:space="preserve">
         <value>Proveedores</value>
     </data>
+    <data name="LanguageLabel" xml:space="preserve">
+        <value>Lengua</value>
+    </data>
+    <data name="ThemeLabel" xml:space="preserve">
+        <value>Tema</value>
+    </data>
+    <data name="PrimaryLabel" xml:space="preserve">
+        <value>Primario</value>
+    </data>
+    <data name="LightLabel" xml:space="preserve">
+        <value>Luminoso</value>
+    </data>
+    <data name="DarkLabel" xml:space="preserve">
+        <value>Oscuro</value>
+    </data>
+    <data name="AccentLabel" xml:space="preserve">
+        <value>Secundario</value>
+    </data>
+    <data name="SaveSettingsText" xml:space="preserve">
+        <value>Guardar Ajustes</value>
+    </data>
 </root>

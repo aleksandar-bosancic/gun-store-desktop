@@ -47,4 +47,25 @@
     <data name="SuppliersLabel" xml:space="preserve">
         <value>Dobavljači</value>
     </data>
+    <data name="LanguageLabel" xml:space="preserve">
+        <value>Jezik</value>
+    </data>
+    <data name="ThemeLabel" xml:space="preserve">
+        <value>Tema</value>
+    </data>
+    <data name="SaveSettingsText" xml:space="preserve">
+        <value>Spremi Podešavanja</value>
+    </data>
+    <data name="PrimaryLabel" xml:space="preserve">
+        <value>Primarna</value>
+    </data>
+    <data name="AccentLabel" xml:space="preserve">
+        <value>Sekundarna</value>
+    </data>
+    <data name="LightLabel" xml:space="preserve">
+        <value>Svijetla</value>
+    </data>
+    <data name="DarkLabel" xml:space="preserve">
+        <value>Tamna</value>
+    </data>
 </root>

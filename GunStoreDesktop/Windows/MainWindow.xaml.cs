@@ -1,11 +1,7 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Controls.Primitives;
-using System.Windows.Media;
+﻿using System.Windows;
+using GunStoreDesktop.Data.DataAccess;
 using GunStoreDesktop.Data.Model;
 using GunStoreDesktop.Util;
-using MaterialDesignThemes.Wpf;
 
 namespace GunStoreDesktop.Windows
 {
@@ -16,61 +12,14 @@ namespace GunStoreDesktop.Windows
     {
         public Employee CurrentEmployee { get; set; }
         public bool isAdmin { get; set; }
-        public string text { get; set; }
         
         public MainWindow()
         {
-            CurrentEmployee = new Employee()
-            {
-                Id = 1,
-                IsAdmin = true,
-                Password = "admin",
-                Username = "admin"
-            };
+            CurrentEmployee = DataFactory.GetMySqlDataFactory().Employee.getEmployees()[0];
+            SettingsUtil.SetStartupSettings(CurrentEmployee.Settings);
             InitializeComponent();
             isAdmin = true;
-            text = "Neki tamo text ludi najludji";
             DataContext = this;
-        }
-
-        private void DarkButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            var paletteHelper = new PaletteHelper();
-            var theme = paletteHelper.GetTheme();
-            theme.SetBaseTheme(Theme.Dark);
-            paletteHelper.SetTheme(theme);
-        }
-
-        private void LightButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            var paletteHelper = new PaletteHelper();
-            var theme = paletteHelper.GetTheme();
-            theme.SetBaseTheme(Theme.Light);
-            paletteHelper.SetTheme(theme);
-        }
-
-        private void GreenButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            var paletteHelper = new PaletteHelper();
-            var theme = paletteHelper.GetTheme();
-            theme.SetPrimaryColor(Colors.Lime);
-            theme.SetSecondaryColor(Colors.MediumPurple);
-            paletteHelper.SetTheme(theme);
-        }
-
-        private void YellowButtonOnClick(object sender, RoutedEventArgs e)
-        {
-            var paletteHelper = new PaletteHelper();
-            var theme = paletteHelper.GetTheme();
-            theme.SetPrimaryColor(Colors.Chartreuse);
-            theme.SetSecondaryColor(Colors.Blue);
-            paletteHelper.SetTheme(theme);
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("AAAAAAAAAAAAA");
-            (sender as ToggleButton).IsChecked = true;
         }
     }
 }

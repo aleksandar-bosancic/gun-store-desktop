@@ -8,4 +8,6 @@ public interface IEmployee
     List<Employee> getEmployees();
     void saveEmployee(Employee employee);
     void deleteEmployeeById(int employeeId);
+
+    void updateEmployeeSettingsById(Employee employee);
 }

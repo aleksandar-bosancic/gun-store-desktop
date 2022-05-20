@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using GunStoreDesktop.Data.Model;
 using GunStoreDesktop.Exceptions;
+using GunStoreDesktop.Util;
 using MySql.Data.MySqlClient;
 
 namespace GunStoreDesktop.Data.DataAccess.MySql;
 
 public class EmployeeMySql : IEmployee
 {
-    private const string SELECT_ALL = "select id, username, password, is_admin from employee";
+    private const string SELECT_ALL = "select id, username, password, is_admin, settings from employee";
+
+    private const string INSERT =
+        "insert into employee(username, password, is_admin, settings) value (@username, @password, @is_admin, @settings)";
+    private const string DELETE_BY_ID = "delete from employee e where e.id = @id";
+    private const string UPDATE_SETTINGS_BY_ID = "update employee e set e.settings = @settings where e.id = @id";
 
     public List<Employee> getEmployees()
     {
@@ -28,7 +37,8 @@ public class EmployeeMySql : IEmployee
                     Id = reader.GetInt32("id"),
                     Username = reader.GetString("username"),
                     Password = reader.GetString("password"),
-                    IsAdmin = reader.GetBoolean("is_admin")
+                    IsAdmin = reader.GetBoolean("is_admin"),
+                    Settings = SettingsUtil.StringToEmployeeSettings(reader.GetString("settings"))
                 });
             }
         }
@@ -51,5 +61,27 @@ public class EmployeeMySql : IEmployee
     public void deleteEmployeeById(int employeeId)
     {
         throw new System.NotImplementedException();
+    }
+
+    public void updateEmployeeSettingsById(Employee employee)
+    {
+        MySqlConnection? connection = null;
+        try
+        {
+            connection = UtilMySql.getConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = UPDATE_SETTINGS_BY_ID;
+            command.Parameters.AddWithValue("@settings", SettingsUtil.EmployeeSettingsToString(employee.Settings));
+            command.Parameters.AddWithValue("@id", employee.Id);
+            command.ExecuteNonQuery();
+        }
+        catch (Exception exception)
+        {
+            throw new DataAccessException("MySQL data access exception", exception);
+        }
+        finally
+        {
+            UtilMySql.closeConnection(connection);
+        }
     }
 }

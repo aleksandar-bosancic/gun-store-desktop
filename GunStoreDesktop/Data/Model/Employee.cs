@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GunStoreDesktop.Data.Model;
 
 public class Employee
 {
     public int Id { get; set; }
-    public string? Username { get; set; }
-    public string? Password { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
     public bool IsAdmin { get; set; }
-    
-    
+    public EmployeeSettings Settings { get; set; }
+
+
 
     public override bool Equals(object? obj)
     {

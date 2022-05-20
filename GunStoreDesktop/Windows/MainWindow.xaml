@@ -18,7 +18,8 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Label HorizontalContentAlignment="Center"
+                <Label Style="{DynamicResource MaterialDesignLabel}"
+                       HorizontalContentAlignment="Center"
                        VerticalContentAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="22" Grid.Column="1"
@@ -69,7 +70,7 @@
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
-                        <views:SettingsView></views:SettingsView>
+                        <views:SettingsView x:Name="SettingsView"></views:SettingsView>
                     </Grid>
                 </TabItem>
                 <TabItem Width="auto"
