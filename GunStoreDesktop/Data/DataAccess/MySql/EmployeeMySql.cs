@@ -19,6 +19,9 @@ public class EmployeeMySql : IEmployee
     private const string DELETE_BY_ID = "delete from employee e where e.id = @id";
     private const string UPDATE_SETTINGS_BY_ID = "update employee e set e.settings = @settings where e.id = @id";
 
+    private const string UPDATE_BY_ID =
+        "update employee e set e.username = @username, e.password = @password, e.is_admin = @is_admin where e.id = @id";
+
     public List<Employee> getEmployees()
     {
         List<Employee> employees = new List<Employee>();
@@ -53,17 +56,78 @@ public class EmployeeMySql : IEmployee
         return employees;
     }
 
-    public void saveEmployee(Employee employee)
+    public Employee saveEmployee(Employee employee)
     {
-        throw new System.NotImplementedException();
+        MySqlConnection? connection = null;
+        try
+        {
+            connection = UtilMySql.getConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = INSERT;
+            command.Parameters.AddWithValue("@username", employee.Username);
+            command.Parameters.AddWithValue("@password", employee.Password);
+            command.Parameters.AddWithValue("@is_admin", employee.IsAdmin);
+            command.Parameters.AddWithValue("@settings", SettingsUtil.EmployeeSettingsToString(employee.Settings));
+            command.ExecuteNonQuery();
+            employee.Id = (int)command.LastInsertedId;
+        }
+        catch (Exception exception)
+        {
+            throw new DataAccessException("MySQL data access exception", exception);
+        }
+        finally
+        {
+            UtilMySql.closeConnection(connection);
+        }
+        return employee;
     }
 
     public void deleteEmployeeById(int employeeId)
     {
-        throw new System.NotImplementedException();
+        MySqlConnection? connection = null;
+        try
+        {
+            connection = UtilMySql.getConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = DELETE_BY_ID;
+            command.Parameters.AddWithValue("@id", employeeId);
+            command.ExecuteNonQuery();
+        }
+        catch (Exception exception)
+        {
+            throw new DataAccessException("MySQL data access exception", exception);
+        }
+        finally
+        {
+            UtilMySql.closeConnection(connection);
+        }
     }
 
     public void updateEmployeeSettingsById(Employee employee)
+    {
+        MySqlConnection? connection = null;
+        try
+        {
+            connection = UtilMySql.getConnection();
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = UPDATE_BY_ID;
+            command.Parameters.AddWithValue("@username", employee.Username);
+            command.Parameters.AddWithValue("@password", employee.Password);
+            command.Parameters.AddWithValue("@is_admin", employee.IsAdmin);
+            command.Parameters.AddWithValue("@id", employee.Id);
+            command.ExecuteNonQuery();
+        }
+        catch (Exception exception)
+        {
+            throw new DataAccessException("MySQL data access exception", exception);
+        }
+        finally
+        {
+            UtilMySql.closeConnection(connection);
+        }
+    }
+
+    public void updateEmployeeBy(Employee employee)
     {
         MySqlConnection? connection = null;
         try

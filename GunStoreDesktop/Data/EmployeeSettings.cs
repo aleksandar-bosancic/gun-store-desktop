@@ -14,4 +14,9 @@ public class EmployeeSettings
         AccentColor = "Teal";
         Theme = "Dark";
     }
+
+    public override string ToString()
+    {
+        return Language + " " + PrimaryColor + " " + AccentColor + " " + Theme;
+    }
 }

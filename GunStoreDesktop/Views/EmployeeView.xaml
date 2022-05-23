@@ -5,75 +5,126 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:GunStoreDesktop.Views"
+             xmlns:util="clr-namespace:GunStoreDesktop.Util"
              mc:Ignorable="d"
              d:DesignHeight="600" d:DesignWidth="800">
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBox Margin="0, 30" MaxHeight="30" MaxWidth="200" TextChanged="Filter_OnTextChanged"></TextBox>
-        <ListView Grid.Row="1"
-                  ItemsSource="{Binding FilteredEmployees, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                  SelectionMode="Extended"
-                  Name="ListView"
-                  Margin="50, 0"
-                  MouseDoubleClick="Row_OnClick">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Username" Width="200">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 0" Text="{Binding Username}"></TextBox>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Password" Width="200">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBox VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 0" Text="{Binding Password}"></TextBox>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Admin">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsAdmin}"></CheckBox>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Delete">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Style="{StaticResource MaterialDesignRaisedButton}"
-                                        Content="Delete" Click="DeleteButton_OnClick" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridView.ColumnHeaderContainerStyle>
-                        <Style TargetType="GridViewColumnHeader" BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
-                            <Setter Property="IsEnabled" Value="False"/>
-                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                            <Setter Property="Margin" Value="10, 0"></Setter>
-                        </Style>
-                    </GridView.ColumnHeaderContainerStyle>
-                </GridView>
-            </ListView.View>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem" BasedOn="{StaticResource MaterialDesignGridViewItem}">
-                    <Style.Setters>
-                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                        <Setter Property="Padding" Value="50, 0"></Setter>
-                        <Setter Property="MinWidth" Value="100"></Setter>
-                    </Style.Setters>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="IsSelected" Value="True" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
+        <Grid Grid.Row="0"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialdesign:HintAssist.Hint="{util:Localization FilterText}"
+                     Margin="0, 30"
+                     VerticalAlignment="Center"
+                     MaxWidth="200"
+                     TextChanged="Filter_OnTextChanged" />
+            <ListView Grid.Row="1" HorizontalAlignment="Center"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.CanContentScroll="True"
+                      ItemsSource="{Binding FilteredEmployees, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Height="Auto"
+                      SelectionMode="Extended"
+                      Name="ListView"
+                      Margin="50, 0"
+                      MouseDoubleClick="Row_OnClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="{util:Localization UsernameText}" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="30" Padding="7"
+                                               VerticalAlignment="Center"
+                                               Margin="10, 0"
+                                               Text="{Binding Username}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization PasswordText}" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="30" Padding="7"
+                                               VerticalAlignment="Center"
+                                               Margin="10, 0"
+                                               Text="{Binding Password}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization IsAdminText}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              IsChecked="{Binding IsAdmin}"
+                                              Height="30"
+                                              IsEnabled="False" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization DeleteText}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                            Click="DeleteButton_OnClick"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Height="30"
+                                            Width="30"
+                                            ToolTip="{util:Localization DeleteEmployeeToolTipText}">
+                                        <materialdesign:PackIcon
+                                            Kind="DeleteOutline"
+                                            Height="24"
+                                            Width="24" />
+                                    </Button>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="GridViewColumnHeader"
+                                   BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Margin" Value="10, 0"></Setter>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" BasedOn="{StaticResource MaterialDesignGridViewItem}">
+                        <Style.Setters>
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Padding" Value="50, 0"></Setter>
+                            <Setter Property="MinWidth" Value="100"></Setter>
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="IsSelected" Value="True" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+        <Button Grid.Row="1"
+                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                HorizontalAlignment="Right"
+                Margin="15, 15, 25, 25"
+                ToolTip="{util:Localization AddEmployeeToolTipText}"
+                Click="AddButton_OnClick">
+            <materialdesign:PackIcon Kind="Add"
+                                     ToolTip="{util:Localization AddEmployeeToolTipText}"
+                                     Height="40"
+                                     Width="40" />
+        </Button>
     </Grid>
 </UserControl>

@@ -70,11 +70,56 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string AddButtonText {
+            get {
+                return ResourceManager.GetString("AddButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Employee.
+        /// </summary>
+        internal static string AddEmployeeToolTipText {
+            get {
+                return ResourceManager.GetString("AddEmployeeToolTipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string CancelButtonText {
+            get {
+                return ResourceManager.GetString("CancelButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
         internal static string DarkLabel {
             get {
                 return ResourceManager.GetString("DarkLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Employee.
+        /// </summary>
+        internal static string DeleteEmployeeToolTipText {
+            get {
+                return ResourceManager.GetString("DeleteEmployeeToolTipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string DeleteText {
+            get {
+                return ResourceManager.GetString("DeleteText", resourceCulture);
             }
         }
         
@@ -120,6 +165,42 @@ namespace GunStoreDesktop.Resources.Localization {
         internal static string FailedLoginText {
             get {
                 return ResourceManager.GetString("FailedLoginText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter.
+        /// </summary>
+        internal static string FilterText {
+            get {
+                return ResourceManager.GetString("FilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid characters.
+        /// </summary>
+        internal static string InvalidCharactersCaption {
+            get {
+                return ResourceManager.GetString("InvalidCharactersCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username or password contains forbidden characters.
+        /// </summary>
+        internal static string InvalidCharactersText {
+            get {
+                return ResourceManager.GetString("InvalidCharactersText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        internal static string IsAdminText {
+            get {
+                return ResourceManager.GetString("IsAdminText", resourceCulture);
             }
         }
         
@@ -219,6 +300,15 @@ namespace GunStoreDesktop.Resources.Localization {
         internal static string ThemeLabel {
             get {
                 return ResourceManager.GetString("ThemeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        internal static string UpdateButtonText {
+            get {
+                return ResourceManager.GetString("UpdateButtonText", resourceCulture);
             }
         }
         

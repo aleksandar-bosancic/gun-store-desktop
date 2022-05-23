@@ -68,4 +68,34 @@
     <data name="DarkLabel" xml:space="preserve">
         <value>Tamna</value>
     </data>
+    <data name="IsAdminText" xml:space="preserve">
+        <value>Admin</value>
+    </data>
+    <data name="CancelButtonText" xml:space="preserve">
+        <value>Otkaži</value>
+    </data>
+    <data name="UpdateButtonText" xml:space="preserve">
+        <value>Ažuriraj</value>
+    </data>
+    <data name="FilterText" xml:space="preserve">
+        <value>Filter</value>
+    </data>
+    <data name="DeleteText" xml:space="preserve">
+        <value>Obriši</value>
+    </data>
+    <data name="AddEmployeeToolTipText" xml:space="preserve">
+        <value>Dodaj Zaposlenog</value>
+    </data>
+    <data name="DeleteEmployeeToolTipText" xml:space="preserve">
+        <value>Obriši Zaposlenog</value>
+    </data>
+    <data name="AddButtonText" xml:space="preserve">
+        <value>Sačuvaj</value>
+    </data>
+    <data name="InvalidCharactersText" xml:space="preserve">
+        <value>Korisničko ime ili lozinka sadrži zabranjene karaktere</value>
+    </data>
+    <data name="InvalidCharactersCaption" xml:space="preserve">
+        <value>Zabranjeni karakteri</value>
+    </data>
 </root>

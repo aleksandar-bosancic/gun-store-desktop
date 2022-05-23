@@ -12,6 +12,13 @@ public class Employee
     public EmployeeSettings Settings { get; set; }
 
 
+    public Employee()
+    {
+        Username = "";
+        Password = "";
+        IsAdmin = false;
+        Settings = new EmployeeSettings();
+    }
 
     public override bool Equals(object? obj)
     {

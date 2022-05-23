@@ -75,4 +75,34 @@
     <data name="SaveSettingsText" xml:space="preserve">
         <value>Save Settings</value>
     </data>
+    <data name="IsAdminText" xml:space="preserve">
+        <value>Admin</value>
+    </data>
+    <data name="UpdateButtonText" xml:space="preserve">
+        <value>Update</value>
+    </data>
+    <data name="CancelButtonText" xml:space="preserve">
+        <value>Cancel</value>
+    </data>
+    <data name="FilterText" xml:space="preserve">
+        <value>Filter</value>
+    </data>
+    <data name="DeleteText" xml:space="preserve">
+        <value>Delete</value>
+    </data>
+    <data name="AddEmployeeToolTipText" xml:space="preserve">
+        <value>Add Employee</value>
+    </data>
+    <data name="DeleteEmployeeToolTipText" xml:space="preserve">
+        <value>Delete Employee</value>
+    </data>
+    <data name="AddButtonText" xml:space="preserve">
+        <value>Save</value>
+    </data>
+    <data name="InvalidCharactersText" xml:space="preserve">
+        <value>Username or password contains forbidden characters</value>
+    </data>
+    <data name="InvalidCharactersCaption" xml:space="preserve">
+        <value>Invalid characters</value>
+    </data>
 </root>

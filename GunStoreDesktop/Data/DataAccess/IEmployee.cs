@@ -6,8 +6,10 @@ namespace GunStoreDesktop.Data.DataAccess;
 public interface IEmployee
 {
     List<Employee> getEmployees();
-    void saveEmployee(Employee employee);
+    Employee saveEmployee(Employee employee);
     void deleteEmployeeById(int employeeId);
 
     void updateEmployeeSettingsById(Employee employee);
+
+    void updateEmployeeBy(Employee employee);
 }

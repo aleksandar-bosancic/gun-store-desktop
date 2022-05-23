@@ -119,5 +119,6 @@
                     VerticalAlignment="Top"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Content="{util:Localization SaveSettingsText}"/>
-        </Grid></ScrollViewer>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
