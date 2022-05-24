@@ -8,13 +8,13 @@ using System.Windows.Data;
 using System.Windows.Input;
 using GunStoreDesktop.Data.DataAccess;
 using GunStoreDesktop.Data.Model;
+using GunStoreDesktop.Util;
 using GunStoreDesktop.Windows;
 
 namespace GunStoreDesktop.Views;
 
 public partial class EmployeeView : UserControl, INotifyPropertyChanged
 {
-    private readonly MainWindow parent;
     private readonly ObservableCollection<Employee> _employees;
     private ObservableCollection<Employee> _filteredEmployees;
 
@@ -36,8 +36,6 @@ public partial class EmployeeView : UserControl, INotifyPropertyChanged
         _employees = new ObservableCollection<Employee>(DataFactory.GetMySqlDataFactory().Employee.getEmployees());
         _filteredEmployees = _employees;
         FilteredEmployees = _employees;
-        // ReSharper disable once AssignNullToNotNullAttribute
-        parent = (MainWindow)Application.Current.MainWindow;
         InitializeComponent();
         DataContext = this;
     }
@@ -55,7 +53,7 @@ public partial class EmployeeView : UserControl, INotifyPropertyChanged
     private void DeleteButton_OnClick(object sender, RoutedEventArgs e)
     {
         Employee? employeeToDelete = ListView?.SelectedItem as Employee;
-        if (employeeToDelete?.Equals(parent.CurrentEmployee) ?? false)
+        if (employeeToDelete?.Equals(SettingsUtil.CurrentEmployee) ?? false)
         {
             return;
         }

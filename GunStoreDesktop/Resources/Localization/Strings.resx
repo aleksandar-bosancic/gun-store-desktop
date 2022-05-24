@@ -234,4 +234,13 @@
     <data name="NoItemText" xml:space="preserve">
         <value>Item does not exist</value>
     </data>
+    <data name="ExistingItemText" xml:space="preserve">
+        <value>Existing item</value>
+    </data>
+    <data name="ColorHexValueText" xml:space="preserve">
+        <value>Color HEX value</value>
+    </data>
+    <data name="ItemNotInStockText" xml:space="preserve">
+        <value>This item is not in stock</value>
+    </data>
 </root>

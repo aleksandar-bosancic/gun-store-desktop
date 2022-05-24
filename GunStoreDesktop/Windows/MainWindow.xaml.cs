@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using GunStoreDesktop.Data.DataAccess;
 using GunStoreDesktop.Data.Model;
 using GunStoreDesktop.Util;
+using GunStoreDesktop.Views;
 
 namespace GunStoreDesktop.Windows
 {
@@ -13,13 +15,21 @@ namespace GunStoreDesktop.Windows
         public Employee CurrentEmployee { get; set; }
         public bool isAdmin { get; set; }
         
-        public MainWindow()
+        public MainWindow(Employee employee)
         {
-            CurrentEmployee = DataFactory.GetMySqlDataFactory().Employee.getEmployees()[0];
+            CurrentEmployee = employee;
+            isAdmin = CurrentEmployee.IsAdmin;
+            SettingsUtil.CurrentEmployee = CurrentEmployee;
             SettingsUtil.SetStartupSettings(CurrentEmployee.Settings);
             InitializeComponent();
-            isAdmin = true;
             DataContext = this;
+        }
+
+        private void LogoutButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new();
+            loginWindow.Show();
+            Close();
         }
     }
 }

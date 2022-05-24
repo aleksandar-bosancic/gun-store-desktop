@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:util="clr-namespace:GunStoreDesktop.Util"
         xmlns:controls="clr-namespace:GunStoreDesktop.Controls"
         mc:Ignorable="d"
         Title="LoginWindow" Height="350" Width="600"
-        MinHeight="300" MinWidth="400"
+        MinHeight="320" MinWidth="400"
         Style="{DynamicResource MaterialDesignWindow}">
     <Grid >
         <Grid.ColumnDefinitions>
@@ -26,12 +27,21 @@
                                       Height="24" Width="24"/>
         <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel>
-                <TextBox Name="UsernameTextBox" Height="30" Width="200" Margin="20" Text="{Binding Username}"
-                         Style="{DynamicResource MaterialDesignTextBox}"
-                         d:DataContext="{d:DesignInstance }" />
-                <PasswordBox PasswordChanged="PasswordBox_OnPasswordChanged" Height="30" Width="200" Margin="20"
-                             Style="{DynamicResource MaterialDesignPasswordBox}" />
-                <Button Click="LoginButtonBaseOnClick" Height="30" MinWidth="100" MaxWidth="150"
+                <TextBox Name="UsernameTextBox" 
+                         VerticalAlignment="Center" 
+                         Width="200" 
+                         Margin="20" 
+                         Text="{Binding Username}"
+                         materialdesign:HintAssist.Hint="{util:Localization UsernameText}"
+                         Style="{DynamicResource MaterialDesignFilledTextBox}"/>
+                <PasswordBox PasswordChanged="PasswordBox_OnPasswordChanged" 
+                             VerticalAlignment="Center" 
+                             Width="200" 
+                             materialdesign:HintAssist.Hint="{util:Localization PasswordText}"
+                             Margin="20"
+                             Style="{DynamicResource MaterialDesignFilledPasswordBox}" />
+                <Button Click="LoginButtonBaseOnClick" 
+                        Height="30" MinWidth="100" MaxWidth="150"
                         HorizontalAlignment="Center"
                         Style="{DynamicResource MaterialDesignRaisedButton}"
                         Content="{util:Localization LoginButtonText}">

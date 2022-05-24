@@ -34,7 +34,7 @@
                  Grid.ColumnSpan="2"
                  Width="200"
                  Text="{Binding Employee.Username}"
-                 MaxLength="44"/>
+                 MaxLength="45"/>
         <TextBox materialdesign:HintAssist.Hint="{util:Localization PasswordText}"
                  Name="PasswordTextBox"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -44,7 +44,7 @@
                  Grid.Row="1" Grid.Column="0"
                  Grid.ColumnSpan="2"
                  Text="{Binding Employee.Password}"
-                 MaxLength="44"/>
+                 MaxLength="45"/>
         <CheckBox VerticalAlignment="Center"
                   HorizontalAlignment="Center"
                   Grid.Row="2" Grid.Column="0"

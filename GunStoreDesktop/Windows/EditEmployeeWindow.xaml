@@ -31,6 +31,7 @@
                  Grid.Row="0" Grid.Column="0"
                  VerticalAlignment="Center"
                  HorizontalAlignment="Center"
+                 MaxLength="45"
                  Grid.ColumnSpan="2"
                  Width="200"
                  Text="{Binding Employee.Username}" />
@@ -38,6 +39,7 @@
                  Name="PasswordTextBox"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                  VerticalAlignment="Center"
+                 MaxLength="45"
                  HorizontalAlignment="Center"
                  Width="200"
                  Grid.Row="1" Grid.Column="0"

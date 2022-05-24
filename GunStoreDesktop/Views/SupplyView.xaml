@@ -31,9 +31,8 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Margin="0, 30"
-                           FontSize="22">
-                    Suppliers
-                </TextBlock>
+                           FontSize="22"
+                           Text="{util:Localization SuppliersLabel}"/>
                 <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}"
                           Grid.Row="1" VerticalAlignment="Center"
                           Name="SupplierCombobox"
@@ -101,7 +100,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <CheckBox Grid.Column="0"
-                              Content="Existing item"
+                              Content="{util:Localization ExistingItemText}"
                               IsChecked="False"
                               Name="ExistingItemCheckBox"
                               Click="ExistingItemCheckBox_OnClick" />

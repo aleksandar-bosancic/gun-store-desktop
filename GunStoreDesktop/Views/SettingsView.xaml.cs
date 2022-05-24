@@ -8,6 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using GunStoreDesktop.Data;
 using GunStoreDesktop.Data.DataAccess;
+using GunStoreDesktop.Data.Model;
 using GunStoreDesktop.Util;
 using GunStoreDesktop.Windows;
 using MaterialDesignThemes.Wpf;
@@ -16,7 +17,7 @@ namespace GunStoreDesktop.Views;
 
 public partial class SettingsView : UserControl, INotifyPropertyChanged
 {
-    private MainWindow parent;
+    public Employee CurrentEmployee { get; set; }
     public event PropertyChangedEventHandler? PropertyChanged;
     private Color _primaryColor;
     private Color _accentColor;
@@ -90,9 +91,10 @@ public partial class SettingsView : UserControl, INotifyPropertyChanged
 
     public SettingsView()
     {
-        // ReSharper disable once AssignNullToNotNullAttribute
-        parent = (MainWindow)Application.Current.MainWindow;
-        Settings = parent.CurrentEmployee.Settings;
+        CurrentEmployee = SettingsUtil.CurrentEmployee;
+        Settings = CurrentEmployee.Settings;
+        _settings = CurrentEmployee.Settings;
+        _currentTheme = CurrentEmployee.Settings.Theme;
         _primaryColor = (Color)ColorConverter.ConvertFromString(Settings.PrimaryColor);
         _accentColor = (Color)ColorConverter.ConvertFromString(Settings.AccentColor);
         _currentLanguage = Settings.Language;
@@ -110,7 +112,7 @@ public partial class SettingsView : UserControl, INotifyPropertyChanged
     }
 
 
-    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {
         if (propertyName == "SelectedColor")
         {
@@ -159,7 +161,6 @@ public partial class SettingsView : UserControl, INotifyPropertyChanged
         Settings.Language = _currentLanguage;
         Settings.PrimaryColor = _primaryColor.ToString();
         Settings.AccentColor = _accentColor.ToString();
-        parent.CurrentEmployee.Settings = Settings;
-        DataFactory.GetMySqlDataFactory().Employee.updateEmployeeSettingsById(parent.CurrentEmployee);
+        DataFactory.GetMySqlDataFactory().Employee.updateEmployeeSettingsById(CurrentEmployee);
     }
 }

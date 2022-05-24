@@ -20,12 +20,24 @@ namespace GunStoreDesktop.Views;
 
 public partial class SalesView : UserControl, INotifyPropertyChanged
 {
-    private readonly Employee? currentEmployee;
+    private readonly Employee currentEmployee;
     private readonly List<Weapon> _weapons;
     private readonly ObservableCollection<Item> _items;
     private ObservableCollection<Item> _filteredItems;
     public ObservableCollection<Item> ReceiptItems { get; set; }
-    public double TotalPrice { get; set; }
+    private double _totalPrice;
+
+    public double TotalPrice
+    {
+        get => _totalPrice;
+        set {
+            if (Math.Abs(_totalPrice - value) > 0.01)
+            {
+                _totalPrice = Math.Truncate(value * 100) / 100;
+            }
+        }
+    }
+
     private Buyer currentBuyer;
 
     public ObservableCollection<Item> FilteredItems
@@ -56,7 +68,7 @@ public partial class SalesView : UserControl, INotifyPropertyChanged
         _weapons = new List<Weapon>(DataFactory.GetMySqlDataFactory().Weapon.getWeapons());
         ReceiptItems = new ObservableCollection<Item>();
         currentBuyer = new Buyer();
-        currentEmployee = (Application.Current.MainWindow as MainWindow)?.CurrentEmployee;
+        currentEmployee = SettingsUtil.CurrentEmployee;
         InitializeComponent();
         DataContext = this;
     }
@@ -71,7 +83,7 @@ public partial class SalesView : UserControl, INotifyPropertyChanged
 
     private void Row_OnClick(object sender, MouseButtonEventArgs e)
     {
-        Console.WriteLine("item");
+        AddButton_OnClick(sender, e);
     }
 
     private void AddButton_OnClick(object sender, RoutedEventArgs e)
@@ -82,6 +94,12 @@ public partial class SalesView : UserControl, INotifyPropertyChanged
             {
                 _items.Remove(item);
                 FilteredItems.Remove(item);
+            }
+            else if (item.InStock == 0)
+            {
+                MessageBox.Show($"{TranslationSource.Instance["ItemNotInStockText"]}",
+                    $"{TranslationSource.Instance["NoItemCaption"]}", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
 
             ReceiptItems.Add(item);
@@ -94,17 +112,18 @@ public partial class SalesView : UserControl, INotifyPropertyChanged
 
     private void ReceiptRow_OnClick(object sender, MouseButtonEventArgs e)
     {
-        Console.WriteLine("receipt click");
+        RemoveButton_OnClick(sender, e);
     }
 
     private void ConfirmSaleButton_OnClick(object sender, RoutedEventArgs e)
     {
         if (!ReceiptItems.Any())
         {
-            MessageBox.Show($"{TranslationSource.Instance["ListEmptyText"]}", 
-                $"{TranslationSource.Instance["ListEmptyCaption"]}" , MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show($"{TranslationSource.Instance["ListEmptyText"]}",
+                $"{TranslationSource.Instance["ListEmptyCaption"]}", MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
         }
+
         bool hasWeapons = ReceiptItems.Select(item => item.Id)
             .Intersect(_weapons.Select(weapon => weapon.ItemId))
             .Any();
@@ -179,16 +198,18 @@ public partial class SalesView : UserControl, INotifyPropertyChanged
                 Amount = item.Count()
             });
         }
+
         foreach (Item item in ReceiptItems.Distinct())
         {
             DataFactory.GetMySqlDataFactory().Item.updateInStockById(item.Id, item.InStock);
         }
+
         ReceiptItems.Clear();
         TotalPriceTextBox.Text = "0";
     }
 
     private double getItemPrice(int id)
     {
-        return _items.First(item => item.Id == id).Price;
+        return ReceiptItems.First(item => item.Id == id).Price;
     }
 }

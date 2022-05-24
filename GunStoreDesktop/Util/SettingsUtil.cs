@@ -5,17 +5,19 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Windows.Media;
 using GunStoreDesktop.Data;
+using GunStoreDesktop.Data.Model;
 using MaterialDesignThemes.Wpf;
 
 namespace GunStoreDesktop.Util;
 
 public static class SettingsUtil
 {
+    public static Employee CurrentEmployee = new ();
     public static EmployeeSettings StringToEmployeeSettings(string settings)
     {
         if (settings != string.Empty)
         {
-            return JsonSerializer.Deserialize<EmployeeSettings>(settings);
+            return JsonSerializer.Deserialize<EmployeeSettings>(settings) ?? new EmployeeSettings();
         }
         return new EmployeeSettings();
     }

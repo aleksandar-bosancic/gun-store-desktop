@@ -12,7 +12,7 @@
           HorizontalAlignment="Stretch"
           Margin="50">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" HorizontalAlignment="Left">
@@ -38,6 +38,18 @@
                       MouseDoubleClick="Row_OnClick">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="ID" Width="80">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="Auto" Padding="0, 7"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               Margin="5, 0"
+                                               Text="{Binding Id}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Header="{util:Localization ManufacturerText}" Width="220">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

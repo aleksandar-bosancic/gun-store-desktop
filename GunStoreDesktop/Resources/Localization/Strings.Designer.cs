@@ -169,6 +169,15 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color HEX value.
+        /// </summary>
+        internal static string ColorHexValueText {
+            get {
+                return ResourceManager.GetString("ColorHexValueText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color.
         /// </summary>
         internal static string ColorText {
@@ -277,6 +286,15 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Existing item.
+        /// </summary>
+        internal static string ExistingItemText {
+            get {
+                return ResourceManager.GetString("ExistingItemText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expiration date.
         /// </summary>
         internal static string ExpirationDateHintText {
@@ -372,6 +390,15 @@ namespace GunStoreDesktop.Resources.Localization {
         internal static string ItemIdText {
             get {
                 return ResourceManager.GetString("ItemIdText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This item is not in stock.
+        /// </summary>
+        internal static string ItemNotInStockText {
+            get {
+                return ResourceManager.GetString("ItemNotInStockText", resourceCulture);
             }
         }
         

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 using GunStoreDesktop.Data.DataAccess;
 using GunStoreDesktop.Data.Model;
 using GunStoreDesktop.Util;
@@ -87,5 +89,11 @@ public partial class BuyerFirearmPermitConfirmationWindow : Window
             DialogResult = true;
             Close();
         }
+    }
+
+    private void BuyerId_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+    {
+        Regex regex = new Regex("[^0-9]+");
+        e.Handled = regex.IsMatch(e.Text);
     }
 }

@@ -93,7 +93,7 @@
                         <TextBox
                             Text="{Binding Color, ElementName=ColorPicker, UpdateSourceTrigger=PropertyChanged}"
                             Style="{StaticResource MaterialDesignFilledTextBox}"
-                            materialdesign:HintAssist.Hint="Color HEX value"
+                            materialdesign:HintAssist.Hint="{util:Localization ColorHexValueText}"
                             DockPanel.Dock="Top"
                             Margin="2,0,10,2" />
 

@@ -5,6 +5,7 @@
         <TargetFramework>net6.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>Resources\Images\gun-store-icon.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -44,12 +45,16 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Resources\Images" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="Resources\Images\language_icon.png" />
       <Resource Include="Resources\Images\language_icon.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\gun-store-icon.png" />
+      <Resource Include="Resources\Images\gun-store-icon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\gun-store-icon.ico" />
+      <Resource Include="Resources\Images\gun-store-icon.ico">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>

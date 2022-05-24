@@ -227,4 +227,13 @@
     <data name="NoItemText" xml:space="preserve">
         <value>Artikal ne postoji</value>
     </data>
+    <data name="ExistingItemText" xml:space="preserve">
+        <value>Postojeći artikal</value>
+    </data>
+    <data name="ColorHexValueText" xml:space="preserve">
+        <value>HEX vrijednost boje</value>
+    </data>
+    <data name="ItemNotInStockText" xml:space="preserve">
+        <value>Ovaj artikal nije na stanju</value>
+    </data>
 </root>
