@@ -98,4 +98,112 @@
     <data name="InvalidCharactersCaption" xml:space="preserve">
         <value>Caracteres prohibidos</value>
     </data>
+    <data name="UsernameAlreadyExistsText" xml:space="preserve">
+        <value>Nombre de usario ya existe</value>
+    </data>
+    <data name="ManufacturerText" xml:space="preserve">
+        <value>Fabricante</value>
+    </data>
+    <data name="ModelText" xml:space="preserve">
+        <value>Modelo</value>
+    </data>
+    <data name="PriceText" xml:space="preserve">
+        <value>Precio</value>
+    </data>
+    <data name="InStockText" xml:space="preserve">
+        <value>En Existencia</value>
+    </data>
+    <data name="AddItemText" xml:space="preserve">
+        <value>Agregar</value>
+    </data>
+    <data name="AddItemToReceiptToolTip" xml:space="preserve">
+        <value>Agregar ítem a la cuenta</value>
+    </data>
+    <data name="RemoveText" xml:space="preserve">
+        <value>Quitar</value>
+    </data>
+    <data name="RemoveItemToolTip" xml:space="preserve">
+        <value>Quitar ítem de la cuenta</value>
+    </data>
+    <data name="ConfirmSaleText" xml:space="preserve">
+        <value>Confirmar Venta</value>
+    </data>
+    <data name="TotalPriceHintText" xml:space="preserve">
+        <value>Precio total</value>
+    </data>
+    <data name="ConfirmText" xml:space="preserve">
+        <value>Confirmar</value>
+    </data>
+    <data name="PermitNumberHintText" xml:space="preserve">
+        <value>Numero de permiso</value>
+    </data>
+    <data name="SearchButtonText" xml:space="preserve">
+        <value>Buscar</value>
+    </data>
+    <data name="DateHintText" xml:space="preserve">
+        <value>Fecha</value>
+    </data>
+    <data name="DateHelperHintText" xml:space="preserve">
+        <value>Fecha de nacimiento</value>
+    </data>
+    <data name="PermitNotFoundText" xml:space="preserve">
+        <value>Permiso no encontrado</value>
+    </data>
+    <data name="ExpirationDateHintText" xml:space="preserve">
+        <value>Fecha de caducidad</value>
+    </data>
+    <data name="FieldsEmptyText" xml:space="preserve">
+        <value>Todos los campos son obligatorios</value>
+    </data>
+    <data name="ListEmptyText" xml:space="preserve">
+        <value>La lista de ítems está vacía</value>
+    </data>
+    <data name="ListEmptyCaption" xml:space="preserve">
+        <value>No hay ítems</value>
+    </data>
+    <data name="BuyerIdHintText" xml:space="preserve">
+        <value>Número de identificación personal</value>
+    </data>
+    <data name="BuyerNameHintText" xml:space="preserve">
+        <value>Nombre</value>
+    </data>
+    <data name="BuyerLastNameHintText" xml:space="preserve">
+        <value>Apellido</value>
+    </data>
+    <data name="NameText" xml:space="preserve">
+        <value>Nombre</value>
+    </data>
+    <data name="AddressText" xml:space="preserve">
+        <value>Dirección</value>
+    </data>
+    <data name="EmailText" xml:space="preserve">
+        <value>Correo electrónico</value>
+    </data>
+    <data name="PhoneText" xml:space="preserve">
+        <value>Numero de telefono</value>
+    </data>
+    <data name="ItemTypeText" xml:space="preserve">
+        <value>Tipo de ítem</value>
+    </data>
+    <data name="CaliberText" xml:space="preserve">
+        <value>Calibre</value>
+    </data>
+    <data name="PackageSizeText" xml:space="preserve">
+        <value>Tamaño del paquete</value>
+    </data>
+    <data name="MagazineText" xml:space="preserve">
+        <value>Tamaño del cartucho</value>
+    </data>
+    <data name="TypeText" xml:space="preserve">
+        <value>Tipo</value>
+    </data>
+    <data name="ColorText" xml:space="preserve">
+        <value>Color</value>
+    </data>
+    <data name="FirearmText" xml:space="preserve">
+        <value>Arma de fuego</value>
+    </data>
+    <data name="OrderButtonText" xml:space="preserve">
+        <value>Pedir</value>
+    </data>
 </root>

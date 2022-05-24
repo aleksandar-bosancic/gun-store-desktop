@@ -98,4 +98,112 @@
     <data name="InvalidCharactersCaption" xml:space="preserve">
         <value>Zabranjeni karakteri</value>
     </data>
+    <data name="UsernameAlreadyExistsText" xml:space="preserve">
+        <value>Korisničko ime već postoji</value>
+    </data>
+    <data name="ManufacturerText" xml:space="preserve">
+        <value>Proizvođač</value>
+    </data>
+    <data name="ModelText" xml:space="preserve">
+        <value>Model</value>
+    </data>
+    <data name="PriceText" xml:space="preserve">
+        <value>Cijena</value>
+    </data>
+    <data name="InStockText" xml:space="preserve">
+        <value>Na Stanju</value>
+    </data>
+    <data name="AddItemText" xml:space="preserve">
+        <value>Dodaj</value>
+    </data>
+    <data name="AddItemToReceiptToolTip" xml:space="preserve">
+        <value>Dodaj artikal na račun</value>
+    </data>
+    <data name="RemoveText" xml:space="preserve">
+        <value>Ukloni</value>
+    </data>
+    <data name="RemoveItemToolTip" xml:space="preserve">
+        <value>Ukloni artikal sa računa</value>
+    </data>
+    <data name="ConfirmSaleText" xml:space="preserve">
+        <value>Potvrdi Prodaju</value>
+    </data>
+    <data name="TotalPriceHintText" xml:space="preserve">
+        <value>Ukupna cijena</value>
+    </data>
+    <data name="ConfirmText" xml:space="preserve">
+        <value>Potvrdi</value>
+    </data>
+    <data name="PermitNumberHintText" xml:space="preserve">
+        <value>Broj dozvole</value>
+    </data>
+    <data name="SearchButtonText" xml:space="preserve">
+        <value>Pretraži</value>
+    </data>
+    <data name="DateHintText" xml:space="preserve">
+        <value>Datum</value>
+    </data>
+    <data name="DateHelperHintText" xml:space="preserve">
+        <value>Datum rođenja</value>
+    </data>
+    <data name="PermitNotFoundText" xml:space="preserve">
+        <value>Dozvola nije pronađena</value>
+    </data>
+    <data name="ExpirationDateHintText" xml:space="preserve">
+        <value>Vrijedi do</value>
+    </data>
+    <data name="FieldsEmptyText" xml:space="preserve">
+        <value>Sva polja su obavezna</value>
+    </data>
+    <data name="ListEmptyText" xml:space="preserve">
+        <value>Lista artikala je prazna</value>
+    </data>
+    <data name="ListEmptyCaption" xml:space="preserve">
+        <value>Nema artikala</value>
+    </data>
+    <data name="BuyerIdHintText" xml:space="preserve">
+        <value>Jedinstveni matični broj</value>
+    </data>
+    <data name="BuyerLastNameHintText" xml:space="preserve">
+        <value>Prezime</value>
+    </data>
+    <data name="BuyerNameHintText" xml:space="preserve">
+        <value>Ime</value>
+    </data>
+    <data name="NameText" xml:space="preserve">
+        <value>Ime</value>
+    </data>
+    <data name="AddressText" xml:space="preserve">
+        <value>Adresa</value>
+    </data>
+    <data name="EmailText" xml:space="preserve">
+        <value>Email</value>
+    </data>
+    <data name="PhoneText" xml:space="preserve">
+        <value>Broj telefona</value>
+    </data>
+    <data name="ItemTypeText" xml:space="preserve">
+        <value>Tip artikla</value>
+    </data>
+    <data name="CaliberText" xml:space="preserve">
+        <value>Kalibar</value>
+    </data>
+    <data name="PackageSizeText" xml:space="preserve">
+        <value>Veličina paketa</value>
+    </data>
+    <data name="MagazineText" xml:space="preserve">
+        <value>Veličina šaržera</value>
+    </data>
+    <data name="TypeText" xml:space="preserve">
+        <value>Tip</value>
+    </data>
+    <data name="ColorText" xml:space="preserve">
+        <value>Boja</value>
+    </data>
+    <data name="FirearmText" xml:space="preserve">
+        <value>Vatreno oružje</value>
+    </data>
+    <data name="OrderButtonText" xml:space="preserve">
+        <value>Poruči</value>
+    </data>
 </root>

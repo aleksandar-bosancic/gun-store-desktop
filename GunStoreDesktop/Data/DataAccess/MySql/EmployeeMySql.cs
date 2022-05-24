@@ -103,7 +103,7 @@ public class EmployeeMySql : IEmployee
         }
     }
 
-    public void updateEmployeeSettingsById(Employee employee)
+    public void updateEmployeeById(Employee employee)
     {
         MySqlConnection? connection = null;
         try
@@ -127,7 +127,7 @@ public class EmployeeMySql : IEmployee
         }
     }
 
-    public void updateEmployeeBy(Employee employee)
+    public void updateEmployeeSettingsById(Employee employee)
     {
         MySqlConnection? connection = null;
         try

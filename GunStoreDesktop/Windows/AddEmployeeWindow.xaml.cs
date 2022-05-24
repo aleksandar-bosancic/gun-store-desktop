@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using GunStoreDesktop.Data.DataAccess;
 using GunStoreDesktop.Data.Model;
@@ -26,6 +28,15 @@ public partial class AddEmployeeWindow : Window
 
     private void AddButton_OnClick(object sender, RoutedEventArgs e)
     {
+        List<Employee> employees = DataFactory.GetMySqlDataFactory().Employee.getEmployees();
+        if (employees.Any(employee => employee.Username.Equals(Employee.Username)))
+        {
+            MessageBox.Show(this, $"{TranslationSource.Instance["UsernameAlreadyExistsText"]}", 
+                $"{TranslationSource.Instance["UsernameAlreadyExistsText"]}" , MessageBoxButton.OK, MessageBoxImage.Warning);
+            UsernameTextBox.Clear();
+            PasswordTextBox.Clear();
+            return;
+        }
         if (!StringsUtil.isAllowed(Employee.Username) && !StringsUtil.isAllowed(Employee.Password))
         {
             MessageBox.Show(this, $"{TranslationSource.Instance["InvalidCharactersText"]}", 

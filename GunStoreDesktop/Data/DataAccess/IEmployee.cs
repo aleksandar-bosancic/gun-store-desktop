@@ -11,5 +11,5 @@ public interface IEmployee
 
     void updateEmployeeSettingsById(Employee employee);
 
-    void updateEmployeeBy(Employee employee);
+    void updateEmployeeById(Employee employee);
 }

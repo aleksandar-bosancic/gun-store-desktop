@@ -1,0 +1,111 @@
+﻿<Window x:Class="GunStoreDesktop.Windows.BuyerFirearmPermitConfirmationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:GunStoreDesktop.Windows"
+        xmlns:util="clr-namespace:GunStoreDesktop.Util"
+        xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Style="{DynamicResource MaterialDesignWindow}"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="BuyerFirearmPermitConfirmationWindow" Height="450" Width="800">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="0"></WindowChrome>
+    </WindowChrome.WindowChrome>
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0"
+              VerticalAlignment="Center"
+              Margin="30, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Grid.Row="0"
+                     Name="ExpirationDate"
+                     IsReadOnly="True"
+                     HorizontalAlignment="Center"
+                     materialdesign:HintAssist.Hint="{util:Localization ExpirationDateHintText}"
+                     materialdesign:HintAssist.HelperText="{util:Localization ExpirationDateHintText}"
+                     Visibility="Hidden">
+            </TextBox>
+            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Grid.Row="1"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     MinWidth="280"
+                     MaxLength="36"
+                     Margin="0, 50"
+                     Text="{Binding FirearmPermit.Uid}"
+                     materialdesign:HintAssist.Hint="{util:Localization PermitNumberHintText}">
+            </TextBox>
+            <Button Grid.Row="2" HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="{util:Localization SearchButtonText}"
+                    Click="SearchButton_OnClick" />
+        </Grid>
+        <Grid Grid.Column="1"
+              VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0"
+                     Margin="20"
+                     Text="{Binding Buyer.Id}"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     materialdesign:HintAssist.Hint="{util:Localization BuyerIdHintText}"
+                     MinWidth="200" />
+            <TextBox Grid.Row="1"
+                     Margin="20"
+                     Text="{Binding Buyer.Name}"
+                     materialdesign:HintAssist.Hint="{util:Localization BuyerNameHintText}"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     MinWidth="200" />
+            <TextBox Grid.Row="2"
+                     Margin="20"
+                     Text="{Binding Buyer.LastName}"
+                     materialdesign:HintAssist.Hint="{util:Localization BuyerLastNameHintText}"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     MinWidth="200" />
+            <DatePicker Grid.Row="3"
+                        Margin="20"
+                        Width="180"
+                        Text="{Binding DateOfBirth, Mode=OneWayToSource}"
+                        VerticalAlignment="Center"
+                        materialdesign:HintAssist.Hint="{util:Localization DateHintText}"
+                        materialdesign:HintAssist.HelperText="{util:Localization DateHelperHintText}"
+                        Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+            <Grid Grid.Row="4"
+                  Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="ConfirmButton_OnClick"
+                        Content="{util:Localization ConfirmText}" />
+                <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Grid.Column="1"
+                        Click="CancelButton_OnClick"
+                        Content="{util:Localization CancelButtonText}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

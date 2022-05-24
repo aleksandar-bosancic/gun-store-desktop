@@ -88,6 +88,69 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string AddItemText {
+            get {
+                return ResourceManager.GetString("AddItemText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add item to receipt.
+        /// </summary>
+        internal static string AddItemToReceiptToolTip {
+            get {
+                return ResourceManager.GetString("AddItemToReceiptToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        internal static string AddressText {
+            get {
+                return ResourceManager.GetString("AddressText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal identification number.
+        /// </summary>
+        internal static string BuyerIdHintText {
+            get {
+                return ResourceManager.GetString("BuyerIdHintText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        internal static string BuyerLastNameHintText {
+            get {
+                return ResourceManager.GetString("BuyerLastNameHintText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name.
+        /// </summary>
+        internal static string BuyerNameHintText {
+            get {
+                return ResourceManager.GetString("BuyerNameHintText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caliber.
+        /// </summary>
+        internal static string CaliberText {
+            get {
+                return ResourceManager.GetString("CaliberText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string CancelButtonText {
@@ -97,11 +160,56 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color.
+        /// </summary>
+        internal static string ColorText {
+            get {
+                return ResourceManager.GetString("ColorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Sale.
+        /// </summary>
+        internal static string ConfirmSaleText {
+            get {
+                return ResourceManager.GetString("ConfirmSaleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        internal static string ConfirmText {
+            get {
+                return ResourceManager.GetString("ConfirmText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
         internal static string DarkLabel {
             get {
                 return ResourceManager.GetString("DarkLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of birth.
+        /// </summary>
+        internal static string DateHelperHintText {
+            get {
+                return ResourceManager.GetString("DateHelperHintText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        internal static string DateHintText {
+            get {
+                return ResourceManager.GetString("DateHintText", resourceCulture);
             }
         }
         
@@ -120,6 +228,15 @@ namespace GunStoreDesktop.Resources.Localization {
         internal static string DeleteText {
             get {
                 return ResourceManager.GetString("DeleteText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string EmailText {
+            get {
+                return ResourceManager.GetString("EmailText", resourceCulture);
             }
         }
         
@@ -151,6 +268,15 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expiration date.
+        /// </summary>
+        internal static string ExpirationDateHintText {
+            get {
+                return ResourceManager.GetString("ExpirationDateHintText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login failed.
         /// </summary>
         internal static string FailedLoginCaption {
@@ -169,11 +295,38 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All fields are required.
+        /// </summary>
+        internal static string FieldsEmptyText {
+            get {
+                return ResourceManager.GetString("FieldsEmptyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filter.
         /// </summary>
         internal static string FilterText {
             get {
                 return ResourceManager.GetString("FilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Firearm.
+        /// </summary>
+        internal static string FirearmText {
+            get {
+                return ResourceManager.GetString("FirearmText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In Stock.
+        /// </summary>
+        internal static string InStockText {
+            get {
+                return ResourceManager.GetString("InStockText", resourceCulture);
             }
         }
         
@@ -205,6 +358,15 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item type.
+        /// </summary>
+        internal static string ItemTypeText {
+            get {
+                return ResourceManager.GetString("ItemTypeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         internal static string LanguageLabel {
@@ -223,11 +385,83 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No items.
+        /// </summary>
+        internal static string ListEmptyCaption {
+            get {
+                return ResourceManager.GetString("ListEmptyCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item list is empty.
+        /// </summary>
+        internal static string ListEmptyText {
+            get {
+                return ResourceManager.GetString("ListEmptyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string LoginButtonText {
             get {
                 return ResourceManager.GetString("LoginButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Magazine size.
+        /// </summary>
+        internal static string MagazineText {
+            get {
+                return ResourceManager.GetString("MagazineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manufacturer.
+        /// </summary>
+        internal static string ManufacturerText {
+            get {
+                return ResourceManager.GetString("ManufacturerText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model.
+        /// </summary>
+        internal static string ModelText {
+            get {
+                return ResourceManager.GetString("ModelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string NameText {
+            get {
+                return ResourceManager.GetString("NameText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        internal static string OrderButtonText {
+            get {
+                return ResourceManager.GetString("OrderButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Package size.
+        /// </summary>
+        internal static string PackageSizeText {
+            get {
+                return ResourceManager.GetString("PackageSizeText", resourceCulture);
             }
         }
         
@@ -241,11 +475,65 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Permit not found.
+        /// </summary>
+        internal static string PermitNotFoundText {
+            get {
+                return ResourceManager.GetString("PermitNotFoundText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Permit number.
+        /// </summary>
+        internal static string PermitNumberHintText {
+            get {
+                return ResourceManager.GetString("PermitNumberHintText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        internal static string PhoneText {
+            get {
+                return ResourceManager.GetString("PhoneText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        internal static string PriceText {
+            get {
+                return ResourceManager.GetString("PriceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Primary.
         /// </summary>
         internal static string PrimaryLabel {
             get {
                 return ResourceManager.GetString("PrimaryLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove item from receipt.
+        /// </summary>
+        internal static string RemoveItemToolTip {
+            get {
+                return ResourceManager.GetString("RemoveItemToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        internal static string RemoveText {
+            get {
+                return ResourceManager.GetString("RemoveText", resourceCulture);
             }
         }
         
@@ -264,6 +552,15 @@ namespace GunStoreDesktop.Resources.Localization {
         internal static string SaveSettingsText {
             get {
                 return ResourceManager.GetString("SaveSettingsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string SearchButtonText {
+            get {
+                return ResourceManager.GetString("SearchButtonText", resourceCulture);
             }
         }
         
@@ -295,6 +592,15 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SupplierText {
+            get {
+                return ResourceManager.GetString("SupplierText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Theme.
         /// </summary>
         internal static string ThemeLabel {
@@ -304,11 +610,38 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total price.
+        /// </summary>
+        internal static string TotalPriceHintText {
+            get {
+                return ResourceManager.GetString("TotalPriceHintText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        internal static string TypeText {
+            get {
+                return ResourceManager.GetString("TypeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update.
         /// </summary>
         internal static string UpdateButtonText {
             get {
                 return ResourceManager.GetString("UpdateButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username already exists.
+        /// </summary>
+        internal static string UsernameAlreadyExistsText {
+            get {
+                return ResourceManager.GetString("UsernameAlreadyExistsText", resourceCulture);
             }
         }
         

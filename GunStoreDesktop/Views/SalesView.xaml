@@ -3,15 +3,254 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:util="clr-namespace:GunStoreDesktop.Util"
              xmlns:local="clr-namespace:GunStoreDesktop.Views"
              mc:Ignorable="d"
              d:DesignHeight="1800" d:DesignWidth="800">
-    <ScrollViewer HorizontalScrollBarVisibility="Auto">
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <materialDesign:PackIcon Kind="CashRegister" Width="512" Height="512"></materialDesign:PackIcon>
-            <materialDesign:PackIcon Kind="CashRegister" Width="512" Height="512"></materialDesign:PackIcon>
-            <materialDesign:PackIcon Kind="CashRegister" Width="512" Height="512"></materialDesign:PackIcon>
-        </StackPanel>
-    </ScrollViewer>
+    <Grid VerticalAlignment="Stretch"
+          HorizontalAlignment="Stretch"
+          Margin="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="50" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     materialdesign:HintAssist.Hint="{util:Localization FilterText}"
+                     VerticalAlignment="Center"
+                     MaxWidth="200"
+                     TextChanged="Filter_OnTextChanged" />
+            <ListView Grid.Row="1"
+                      HorizontalAlignment="Center"
+                      Width="Auto"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.CanContentScroll="True"
+                      ItemsSource="{Binding FilteredItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Height="Auto"
+                      SelectionMode="Extended"
+                      Name="ListView"
+                      MouseDoubleClick="Row_OnClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="{util:Localization ManufacturerText}" Width="220">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="Auto" Padding="7"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               Margin="5, 0"
+                                               Text="{Binding Manufacturer}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization ModelText}" Width="220">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="Auto" Padding="7"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               Margin="5, 0"
+                                               Text="{Binding Model}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization PriceText}" Width="120">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="30" Padding="7"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="5, 0"
+                                               Text="{Binding Price}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization InStockText}" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="30" Padding="7"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Margin="5, 0"
+                                               Text="{Binding InStock}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization AddItemText}" Width="120">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                            Click="AddButton_OnClick"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Height="30"
+                                            Width="30"
+                                            ToolTip="{util:Localization AddItemToReceiptToolTip}">
+                                        <materialdesign:PackIcon
+                                            Kind="TagPlus"
+                                            Height="24"
+                                            Width="24" />
+                                    </Button>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="GridViewColumnHeader"
+                                   BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" BasedOn="{StaticResource MaterialDesignGridViewItem}">
+                        <Style.Setters>
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="MinWidth" Value="100"></Setter>
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="IsSelected" Value="True" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition MaxHeight="100" />
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="0"
+                      HorizontalAlignment="Center"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.CanContentScroll="True"
+                      ItemsSource="{Binding ReceiptItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      Height="Auto"
+                      SelectionMode="Extended"
+                      Name="ReceiptList"
+                      Margin="50, 0"
+                      MouseDoubleClick="ReceiptRow_OnClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="{util:Localization RemoveText}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                            Click="RemoveButton_OnClick"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Height="30"
+                                            Width="30"
+                                            ToolTip="{util:Localization RemoveItemToolTip}">
+                                        <materialdesign:PackIcon
+                                            Kind="TagRemove"
+                                            Height="24"
+                                            Width="24" />
+                                    </Button>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization ManufacturerText}" Width="220">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="Auto" Padding="7"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               Margin="10, 0"
+                                               Text="{Binding Manufacturer}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization ModelText}" Width="220">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="Auto" Padding="7"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               Margin="10, 0"
+                                               Text="{Binding Model}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="{util:Localization PriceText}" Width="120">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Height="30" Padding="7"
+                                               VerticalAlignment="Center"
+                                               Margin="10, 0"
+                                               Text="{Binding Price}">
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="GridViewColumnHeader"
+                                   BasedOn="{StaticResource {x:Type GridViewColumnHeader}}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Margin" Value="0, 0"></Setter>
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                    </GridView>
+                </ListView.View>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" BasedOn="{StaticResource MaterialDesignGridViewItem}">
+                        <Style.Setters>
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Padding" Value="0, 0"></Setter>
+                            <Setter Property="MinWidth" Value="100"></Setter>
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="IsSelected" Value="True" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+            <Grid Grid.Row="1"
+                  HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox
+                    Name="TotalPriceTextBox"
+                    Text="{Binding TotalPrice}"
+                    FontSize="30"
+                    Height="50"
+                    IsReadOnly="True"
+                    TextAlignment="Center"
+                    MaxLines="1"
+                    materialdesign:HintAssist.Hint="{util:Localization PriceText}"
+                    materialdesign:HintAssist.HelperText="{util:Localization TotalPriceHintText}"
+                    materialdesign:HintAssist.HelperTextFontSize="16" />
+                <Button Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Content="{util:Localization ConfirmSaleText}"
+                        Click="ConfirmSaleButton_OnClick"/>
+            </Grid>
+        </Grid>
+    </Grid>
+
 </UserControl>

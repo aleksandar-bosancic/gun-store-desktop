@@ -5,9 +5,226 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:GunStoreDesktop.Views"
+             xmlns:util="clr-namespace:GunStoreDesktop.Util"
              mc:Ignorable="d"
-             d:DesignHeight="600" d:DesignWidth="600">
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <materialdesign:PackIcon Kind="TruckOutline" Width="512" Height="512"></materialdesign:PackIcon>
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          Margin="30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0"
+              VerticalAlignment="Top"
+              Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      Grid.Row="0" VerticalAlignment="Center"
+                      Name="SupplierCombobox"
+                      Margin="0, 30"
+                      SelectionChanged="Supplier_OnSelectionChanged"
+                      materialdesign:HintAssist.Hint="{util:Localization SuppliersLabel}"
+                      HorizontalAlignment="Center"
+                      MinWidth="100"
+                      ItemsSource="{Binding Suppliers}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Grid.Row="1"
+                     Margin="0, 20"
+                     IsReadOnly="True"
+                     MinWidth="100"
+                     VerticalAlignment="Center"
+                     materialdesign:HintAssist.Hint="{util:Localization NameText}"
+                     HorizontalAlignment="Center"
+                     Text="{Binding SelectedSupplier.Name}">
+            </TextBox>
+            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Grid.Row="2"
+                     Margin="0, 20"
+                     IsReadOnly="True"
+                     MinWidth="100"
+                     VerticalAlignment="Center"
+                     materialdesign:HintAssist.Hint="{util:Localization AddressText}"
+                     HorizontalAlignment="Center"
+                     Text="{Binding SelectedSupplier.Address}" />
+            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Grid.Row="3"
+                     Margin="0, 20"
+                     IsReadOnly="True"
+                     MinWidth="100"
+                     materialdesign:HintAssist.Hint="{util:Localization EmailText}"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Text="{Binding SelectedSupplier.Email}" />
+            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Grid.Row="4"
+                     Margin="0, 20"
+                     IsReadOnly="True"
+                     MinWidth="100"
+                     materialdesign:HintAssist.Hint="{util:Localization PhoneText}"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Text="{Binding SelectedSupplier.PhoneNumber}" />
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1"
+              VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ComboBox Grid.Row="0"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      Margin="30"
+                      HorizontalAlignment="Center"
+                      MinWidth="150"
+                      SelectionChanged="ItemTypeCombobox_OnSelectionChanged"
+                      VerticalAlignment="Center"
+                      Name="ItemTypeCombobox"
+                      materialdesign:HintAssist.Hint="{util:Localization ItemTypeText}">
+                <ComboBoxItem Content="Ammunition" IsSelected="True"></ComboBoxItem>
+                <ComboBoxItem Content="Equipment"></ComboBoxItem>
+                <ComboBoxItem Content="Weapon"></ComboBoxItem>
+            </ComboBox>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBox Grid.Column="0" Grid.Row="0"
+                         Name="ManufacturerBox"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization ManufacturerText}"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Manufacturer
+                </TextBox>
+                <TextBox Grid.Column="1" Grid.Row="0"
+                         HorizontalAlignment="Center"
+                         Name="ModelBox"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization ModelText}"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Model
+                </TextBox>
+                <TextBox Grid.Column="0" Grid.Row="1"
+                         HorizontalAlignment="Center"
+                         Name="PriceBox"
+                         materialdesign:HintAssist.Hint="{util:Localization PriceText}"
+                         VerticalAlignment="Center"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Price
+                </TextBox>
+                <TextBox Grid.Column="1" Grid.Row="1"
+                         HorizontalAlignment="Center"
+                         Name="InStockBox"
+                         materialdesign:HintAssist.Hint="{util:Localization InStockText}"
+                         VerticalAlignment="Center"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    In stock
+                </TextBox>
+
+                <TextBox Grid.Column="0" Grid.Row="2"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization CaliberText}"
+                         Name="CaliberBox"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Caliber
+                </TextBox>
+                <TextBox Grid.Column="1" Grid.Row="2"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization PackageSizeText}"
+                         Name="PackageSizeBox"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Package size
+                </TextBox>
+                <TextBox Grid.Column="1" Grid.Row="2"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization MagazineText}"
+                         Name="MagazineCapacityBox"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Package size
+                </TextBox>
+                <TextBox Grid.Column="0" Grid.Row="3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization TypeText}"
+                         Name="TypeBox"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Type
+                </TextBox>
+                <TextBox Grid.Column="1" Grid.Row="3"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization ColorText}"
+                         Name="ColorBox"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Color
+                </TextBox>
+                <CheckBox Grid.Column="0" Grid.Row="4"
+                          HorizontalAlignment="Center"
+                          Name="FirearmCheckbox"
+                          Content="{util:Localization FirearmText}"
+                          VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1" Grid.Row="4"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         materialdesign:HintAssist.Hint="{util:Localization NameText}"
+                         Name="NameBox"
+                         MinWidth="200"
+                         MaxLines="1"
+                         MaxLength="45">
+                    Name
+                </TextBox>
+                <Button Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.Row="5"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Content="{util:Localization OrderButtonText}"/>
+            </Grid>
+
+
+        </Grid>
     </Grid>
 </UserControl>

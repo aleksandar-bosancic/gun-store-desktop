@@ -42,7 +42,7 @@ public partial class EditEmployeeWindow : Window
 
         if (Employee.Username != string.Empty && Employee.Password != string.Empty)
         {
-            DataFactory.GetMySqlDataFactory().Employee.updateEmployeeSettingsById(Employee);
+            DataFactory.GetMySqlDataFactory().Employee.updateEmployeeById(Employee);
         }
         Close();
     }
