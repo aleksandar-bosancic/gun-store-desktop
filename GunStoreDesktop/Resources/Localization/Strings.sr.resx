@@ -12,7 +12,7 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="LoginButtonText" xml:space="preserve">
-        <value>Prijava</value>
+        <value>Prijavi se</value>
     </data>
     <data name="PasswordText" xml:space="preserve">
         <value>Lozinka</value>
@@ -117,13 +117,13 @@
         <value>Dodaj</value>
     </data>
     <data name="AddItemToReceiptToolTip" xml:space="preserve">
-        <value>Dodaj artikal na račun</value>
+        <value>Dodaj artikl na račun</value>
     </data>
     <data name="RemoveText" xml:space="preserve">
         <value>Ukloni</value>
     </data>
     <data name="RemoveItemToolTip" xml:space="preserve">
-        <value>Ukloni artikal sa računa</value>
+        <value>Ukloni artikl sa računa</value>
     </data>
     <data name="ConfirmSaleText" xml:space="preserve">
         <value>Potvrdi Prodaju</value>
@@ -225,15 +225,15 @@
         <value>Greška sa artiklom</value>
     </data>
     <data name="NoItemText" xml:space="preserve">
-        <value>Artikal ne postoji</value>
+        <value>Artikl ne postoji</value>
     </data>
     <data name="ExistingItemText" xml:space="preserve">
-        <value>Postojeći artikal</value>
+        <value>Postojeći artikl</value>
     </data>
     <data name="ColorHexValueText" xml:space="preserve">
         <value>HEX vrijednost boje</value>
     </data>
     <data name="ItemNotInStockText" xml:space="preserve">
-        <value>Ovaj artikal nije na stanju</value>
+        <value>Ovaj artikl nije na stanju</value>
     </data>
 </root>

@@ -448,7 +448,7 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Sign in.
         /// </summary>
         internal static string LoginButtonText {
             get {
