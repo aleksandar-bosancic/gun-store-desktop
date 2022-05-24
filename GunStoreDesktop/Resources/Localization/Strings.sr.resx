@@ -206,4 +206,25 @@
     <data name="OrderButtonText" xml:space="preserve">
         <value>Poruči</value>
     </data>
+    <data name="AmountText" xml:space="preserve">
+        <value>Količina</value>
+    </data>
+    <data name="ItemIdText" xml:space="preserve">
+        <value>ID artikla</value>
+    </data>
+    <data name="SupplierNotSelectedText" xml:space="preserve">
+        <value>Dobavljač mora biti izabran</value>
+    </data>
+    <data name="SupplierText" xml:space="preserve">
+        <value>Dobavljač</value>
+    </data>
+    <data name="SupplierNotSelectedCaption" xml:space="preserve">
+        <value>Dobavljač nije odabran</value>
+    </data>
+    <data name="NoItemCaption" xml:space="preserve">
+        <value>Greška sa artiklom</value>
+    </data>
+    <data name="NoItemText" xml:space="preserve">
+        <value>Artikal ne postoji</value>
+    </data>
 </root>

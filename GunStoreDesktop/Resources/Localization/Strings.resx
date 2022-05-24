@@ -178,7 +178,7 @@
         <value>Last name</value>
     </data>
     <data name="SupplierText" xml:space="preserve">
-        <value />
+        <value>Supplier</value>
     </data>
     <data name="NameText" xml:space="preserve">
         <value>Name</value>
@@ -215,5 +215,23 @@
     </data>
     <data name="OrderButtonText" xml:space="preserve">
         <value>Order</value>
+    </data>
+    <data name="AmountText" xml:space="preserve">
+        <value>Amount</value>
+    </data>
+    <data name="ItemIdText" xml:space="preserve">
+        <value>Item ID</value>
+    </data>
+    <data name="SupplierNotSelectedText" xml:space="preserve">
+        <value>Supplier must be selected</value>
+    </data>
+    <data name="SupplierNotSelectedCaption" xml:space="preserve">
+        <value>No supplier selected</value>
+    </data>
+    <data name="NoItemCaption" xml:space="preserve">
+        <value>Item error</value>
+    </data>
+    <data name="NoItemText" xml:space="preserve">
+        <value>Item does not exist</value>
     </data>
 </root>

@@ -6,6 +6,6 @@ namespace GunStoreDesktop.Data.DataAccess;
 public interface IAmmunition
 {
     List<Ammunition> getAmmunition();
-    void saveAmmunition();
+    void saveAmmunition(Ammunition ammunition);
     void deleteAmmunitionById();
 }

@@ -115,6 +115,15 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        internal static string AmountText {
+            get {
+                return ResourceManager.GetString("AmountText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal identification number.
         /// </summary>
         internal static string BuyerIdHintText {
@@ -358,6 +367,15 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item ID.
+        /// </summary>
+        internal static string ItemIdText {
+            get {
+                return ResourceManager.GetString("ItemIdText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item type.
         /// </summary>
         internal static string ItemTypeText {
@@ -444,6 +462,24 @@ namespace GunStoreDesktop.Resources.Localization {
         internal static string NameText {
             get {
                 return ResourceManager.GetString("NameText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item error.
+        /// </summary>
+        internal static string NoItemCaption {
+            get {
+                return ResourceManager.GetString("NoItemCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item does not exist.
+        /// </summary>
+        internal static string NoItemText {
+            get {
+                return ResourceManager.GetString("NoItemText", resourceCulture);
             }
         }
         
@@ -583,6 +619,24 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No supplier selected.
+        /// </summary>
+        internal static string SupplierNotSelectedCaption {
+            get {
+                return ResourceManager.GetString("SupplierNotSelectedCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supplier must be selected.
+        /// </summary>
+        internal static string SupplierNotSelectedText {
+            get {
+                return ResourceManager.GetString("SupplierNotSelectedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Suppliers.
         /// </summary>
         internal static string SuppliersLabel {
@@ -592,7 +646,7 @@ namespace GunStoreDesktop.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Supplier.
         /// </summary>
         internal static string SupplierText {
             get {

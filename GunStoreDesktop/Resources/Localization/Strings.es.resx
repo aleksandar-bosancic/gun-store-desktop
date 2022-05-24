@@ -206,4 +206,25 @@
     <data name="OrderButtonText" xml:space="preserve">
         <value>Pedir</value>
     </data>
+    <data name="AmountText" xml:space="preserve">
+        <value>Cantidad</value>
+    </data>
+    <data name="ItemIdText" xml:space="preserve">
+        <value>Identificación del producto</value>
+    </data>
+    <data name="SupplierNotSelectedText" xml:space="preserve">
+        <value>El proveedor debe ser seleccionado</value>
+    </data>
+    <data name="SupplierText" xml:space="preserve">
+        <value>Proveedor</value>
+    </data>
+    <data name="SupplierNotSelectedCaption" xml:space="preserve">
+        <value>No proveedor seleccionado</value>
+    </data>
+    <data name="NoItemCaption" xml:space="preserve">
+        <value>Error de ítem</value>
+    </data>
+    <data name="NoItemText" xml:space="preserve">
+        <value>Ítem no existe</value>
+    </data>
 </root>

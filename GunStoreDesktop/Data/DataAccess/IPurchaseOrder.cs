@@ -4,5 +4,5 @@ namespace GunStoreDesktop.Data.DataAccess;
 
 public interface IPurchaseOrder
 {
-    void save(PurchaseOrder purchaseOrder);
+    PurchaseOrder save(PurchaseOrder purchaseOrder);
 }

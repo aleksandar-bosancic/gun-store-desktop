@@ -6,4 +6,5 @@ namespace GunStoreDesktop.Data.DataAccess;
 public interface IWeapon
 {
     List<Weapon> getWeapons();
+    void saveWeapon(Weapon weapon);
 }
